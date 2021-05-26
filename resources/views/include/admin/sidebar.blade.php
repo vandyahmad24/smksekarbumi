@@ -1,6 +1,6 @@
 <nav id="sidebar" class="sidebar">
     <div class="sidebar-content js-simplebar">
-        <a class="sidebar-brand" href="/">
+        <a class="sidebar-brand" href="{{route('home')}}">
             <span class="align-middle mr-3">SMK Sekar Bumi Nusantara</span>
         </a>
 
