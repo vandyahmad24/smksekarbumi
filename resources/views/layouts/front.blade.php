@@ -21,7 +21,7 @@
 
       <!-- <h1 class="logo mr-auto"><a href="index.html">Mentor</a></h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="index.html" class="logo mr-auto"><img src="{{asset('front/img/logo.png')}}" alt="" class="img-fluid"></a>
+      <a href="{{url('/')}}" class="logo mr-auto"><img src="{{asset('front/img/logo.png')}}" alt="" class="img-fluid"></a>
 
       @include('include.front.navbar')
 
