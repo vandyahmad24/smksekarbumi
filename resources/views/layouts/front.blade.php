@@ -8,7 +8,8 @@
   <title>@yield('title')</title>
   <meta content="smk sekar bumi nusantara" name="description">
   <meta content="smk sekar bumi nusantara" name="keywords">
-
+  <meta name="author" content="SMK SEKAR BUMI NUSANTARA">
+  <meta name="google-site-verification" content="Gv2FQA4egoA0Lfwj91ffvhFwk6H0-psNCHDkTO_e-Ek"/>
   <!-- Favicons -->
     @include('include.front.css')
 </head>
