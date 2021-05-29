@@ -13,9 +13,9 @@
                 <div class="col-md-5">
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <label for="nisn">NISN</label>
-                            <input type="number" id="nisn" name="nisn" class="form-control form-control-lg" placeholder="Masukan NISN" value="{{old('nisn')}}">
-                            <small>Masukan NISN Anda</small>
+                            <label for="nis">NIS</label>
+                            <input type="number" id="nis" name="nis" class="form-control form-control-lg" placeholder="Masukan nis" value="{{old('nis')}}">
+                            <small>Masukan NIS Anda</small>
                         </div>
                         @if (session('gagal'))
                             <div class="col-md-12 form-group">
@@ -45,7 +45,12 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
+                            {{-- <a href='//$link->isi' target='_blank'> --}}
+                            @if (!session('lulus'))
                             <button type="submit" class="btn btn-primary btn-lg px-5">Lihat Nilai</button>
+                            @else
+                            <a href="//{{$config->isi}}" target='_blank' class="btn btn-success btn-lg px-5">Lihat SKL</a>
+                            @endif
                         </div>
                     </div>
                 </div>

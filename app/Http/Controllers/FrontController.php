@@ -58,25 +58,26 @@ class FrontController extends Controller
     }
     public function kelulusan()
     {
-        return view('front.kelulusan');
+        $config = Config::where('title','links')->first();
+        return view('front.kelulusan',compact('config'));
     }
     public function cekNilai(Request $request)
     {
         $request->validate([
-            'nisn' => 'required|integer',
+            'nis' => 'required|integer',
         ]);
-
-        $kelulusan = Kelulusan::where('nisn',$request->nisn)->first();
+        // dd($request->all());
+        $kelulusan = Kelulusan::where('nis',$request->nis)->first();
         if(!isset($kelulusan)){
-            return back()->withErrors('NISN yang anda masukan tidak terdaftar disekolah kami');
+            return back()->withErrors('NIS yang anda masukan tidak terdaftar disekolah kami');
         }
         if($kelulusan->kelulusan==0){
             $nama = ucwords($kelulusan->nama);
-            return redirect('kelulusan')->with('gagal', "Mohon Maaf atas nama <b>$nama</b> dengan NISN $kelulusan->nisn dinyatakan <b>Tidak Lulus</b> ");
+            return redirect('kelulusan')->with('gagal', "Mohon Maaf atas nama <b>$nama</b> dengan NIS $kelulusan->NIS dinyatakan <b>TIDAK LULUS</b> ");
         }else{
             $link = Config::where('title','links')->first();
             $nama = ucwords($kelulusan->nama);
-            return redirect('kelulusan')->with('lulus', "Selamat, atas nama <b>$nama</b> dengan NISN <b>$kelulusan->nisn</b> dinyatakan <b>Lulus</b> <br> Anda Dapat Download SKL dengan klik link berikut <a href='//$link->isi' target='_blank'>Download SKL</a> "); 
+            return redirect('kelulusan')->with('lulus', "Selamat, atas nama <b>$nama</b> dengan NIS <b>$kelulusan->nis</b> dinyatakan <b>LULUS</b> <br>"); 
         }
     }
 }
