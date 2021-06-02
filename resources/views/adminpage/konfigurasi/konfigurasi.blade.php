@@ -24,7 +24,7 @@
                 @foreach ($configs as $config)
                 <tr>
                     <td>{{$config->title}}</td>
-                    <td>{{$config->isi}}</td>
+                    <td>{{$config->isi ?: $config->tgl_buka}}</td>
                     <td> <a href="{{route('konfigurasi-edit',$config->id)}}" class="btn btn-warning">Edit</a> </td>
                 </tr>
                 @endforeach

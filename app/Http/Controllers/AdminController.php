@@ -24,10 +24,16 @@ class AdminController extends Controller
     public function konfigurasiPut(Request $request)
     {
         $request->validate([
-            'isi'      => 'required'
+            'isi'      => 'required',
         ]);
         $config = Config::find($request->id);
-        $config->isi = $request->isi;
+        if($config->title=='tgl_buka'){
+            $config->isi="";
+            $config->tgl_buka=$request->isi;
+        }else{
+            $config->isi = $request->isi;
+        }
+       
         $config->save();
         return redirect('/admin/konfigurasi')->with('status', 'Konfigurasi Berhasil Terupdate!');
     }
