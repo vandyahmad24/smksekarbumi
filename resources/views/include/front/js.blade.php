@@ -9,3 +9,5 @@
 
 <!-- Template Main JS File -->
 <script src="{{asset('front/js/main.js')}}"></script>
+<script src="{{asset('front/timer/flipdown.js')}}"></script>
+<script src="{{asset('front/timer/jquery.countdown.js')}}"></script>

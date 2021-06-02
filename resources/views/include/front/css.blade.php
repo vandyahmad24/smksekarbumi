@@ -12,6 +12,7 @@
 <link href="{{asset('front/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 <link href="{{asset('front/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
 <link href="{{asset('front/vendor/aos/aos.css')}}" rel="stylesheet">
-
 <link href="{{asset('front/css/style.css')}}" rel="stylesheet">
+<link href="{{asset('front/timer/flipdown.css')}}" rel="stylesheet">
+
 

@@ -9,6 +9,7 @@ use App\Models\Gallery;
 use App\Models\Jurusan;
 use App\Models\Kelulusan;
 use App\Models\Page;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -59,7 +60,11 @@ class FrontController extends Controller
     public function kelulusan()
     {
         $config = Config::where('title','links')->first();
-        return view('front.kelulusan',compact('config'));
+        $conf_buka = Config::where('title','tgl_buka')->first();
+        $now = Carbon::now();
+        // echo($tgl_buka->tgl_buka);
+        // die();
+        return view('front.kelulusan',compact('config','conf_buka','now'));
     }
     public function cekNilai(Request $request)
     {

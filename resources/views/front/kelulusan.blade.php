@@ -7,6 +7,8 @@
 <div class="site-section" style="margin-top: 150px">
     <div class="container">
 
+
+        @if ($now > $conf_buka->tgl_buka)
         <form action="{{route('cek-nilai')}}" method="POST">
             @csrf
             <div class="row justify-content-center">
@@ -56,8 +58,58 @@
                 </div>
             </div>
         </form>
+        @else
+        <div class="row justify-content-center">
+            <center>
+                <h3>
+                   <b> Selamat Datang Calon Alumni SMK Sekar Bumi Nusantara Di Situs Kelulusan 2021</b>
+                </h3>
+            <div class="col-md-12">
+                "Hallo,. Siswa - Siswi Kelas XII SMK Sekar Bumi Nusantara Gringsing"
+                <br>
+                Marilah kita iringi momentum kelulusan ini dengan kegiatan positif sebagai implementasi pelajar yang kreatif, inovatif dan berbudi luhur. 
+                <br> NO CORET-CORET & NO KONVOI
+            </div>
+            <div class="example mt-3">
+                <div class="container">
+                    <div class="card text-white bg-info mb-3">
+                        <div class="card-header">
+                            <h3>Waktu Mundur Pengumuman Kelulusan</h3>
+                        </div>
+                        <div class="card-body">
+                            <h1>
+                                <div id="clock"></div>
+                            </h1>
+                            <input type="hidden" value="<?=$conf_buka->tgl_buka ?>" id="waktu">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            </center>
+        </div>
+        @endif
+        
 
       
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        var jam = $("#waktu").val();
+        console.log(jam)
+        $('#clock').countdown(jam, function(event) {
+        var $this = $(this).html(event.strftime(''
+            + '<span>%d</span> Hari '
+            + '<span>%H</span> Jam '
+            + '<span>%M</span> Menit '
+            + '<span>%S</span> Detik'));
+        });
+            
+       
+      
+    });
+</script>
+
 @endsection

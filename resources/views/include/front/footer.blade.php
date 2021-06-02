@@ -8,7 +8,7 @@
           <div class="col-lg-5 col-md-6 footer-contact">
             <h3>Profil Sekolah</h3>
             <p>
-                SMK Sekar Bumi Nusantara merupakan salah satu Lembaga Pendidikan Menengah Kejuruan di Kota Batang, Jawa Tengah Beralamatkan <br>{{$alamat}} <br>
+                SMK Sekar Bumi Nusantara merupakan salah satu Lembaga Pendidikan Menengah Kejuruan di Kabupaten Batang, Jawa Tengah beralamatkan <br>{{$alamat}} <br>
               <strong>Telepon:</strong> {{$telepon}}<br>
               <strong>Email:</strong> {{$email}}<br>
             </p>
