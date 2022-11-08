@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Config;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class ConfigSeeder extends Seeder
@@ -29,9 +30,11 @@ class ConfigSeeder extends Seeder
         $config->isi=" Jl. Plelen – Ketanggan KM 2 Ds. Sawangan Kec. Gringsing Kab. Batang";
         $config->save();
 
+        $date = Carbon::now();
+        $date->addDays(5);
         $config = new Config();
-        $config->title="alamat";
-        $config->isi=" Jl. Plelen – Ketanggan KM 2 Ds. Sawangan Kec. Gringsing Kab. Batang";
+        $config->title="tgl_buka";
+        $config->tgl_buka=$date;
         $config->save();
 
         $config = new Config();

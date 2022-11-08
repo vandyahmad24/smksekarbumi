@@ -62,7 +62,7 @@
         <div class="row justify-content-center">
             <center>
                 <h3>
-                   <b> Selamat Datang Calon Alumni SMK Sekar Bumi Nusantara Di Situs Kelulusan 2021</b>
+                   <b class=""> SELAMAT DATANG CALON ALUMNI SMK SEKAR BUMI NUSANTARA DI SITUS KELULUSAN 2022</b>
                 </h3>
             <div class="col-md-12">
                 "Hallo,. Siswa - Siswi Kelas XII SMK Sekar Bumi Nusantara Gringsing"

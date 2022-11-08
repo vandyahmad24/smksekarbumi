@@ -33,7 +33,7 @@ Route::post('/cek-nilai', [FrontController::class, 'cekNilai'])->name('cek-nilai
 
 
 Auth::routes([
-    'register' => false, 
+    // 'register' => false, 
     'reset' => false, 
     'verify' => false, 
 ]);

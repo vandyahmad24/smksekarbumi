@@ -16,7 +16,8 @@ class CreateConfigsTable extends Migration
         Schema::create('configs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('isi');
+            $table->string('isi')->nullable();
+            $table->dateTime('tgl_buka');
             $table->timestamps();
         });
     }
