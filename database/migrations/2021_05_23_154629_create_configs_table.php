@@ -17,7 +17,7 @@ class CreateConfigsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('isi')->nullable();
-            $table->dateTime('tgl_buka');
+            $table->dateTime('tgl_buka')->nullable();
             $table->timestamps();
         });
     }

@@ -26,6 +26,13 @@ class ConfigProvider extends ServiceProvider
      */
     public function boot()
     {
+
+
+    // Check if the application is running in the web context
+        if ($this->app->runningInConsole()) {
+            return;
+        }
+
         $email = Config::where('title','email')->first();
         view()->share('email',$email->isi);
 
