@@ -62,7 +62,7 @@
         <div class="row justify-content-center">
             <center>
                 <h3>
-                   <b class=""> SELAMAT DATANG CALON ALUMNI SMK SEKAR BUMI NUSANTARA DI SITUS KELULUSAN 2022</b>
+                   <b class=""> SELAMAT DATANG CALON ALUMNI SMK SEKAR BUMI NUSANTARA DI SITUS KELULUSAN</b>
                 </h3>
             <div class="col-md-12">
                 "Hallo,. Siswa - Siswi Kelas XII SMK Sekar Bumi Nusantara Gringsing"
@@ -95,21 +95,31 @@
       
     </div>
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        var jam = $("#waktu").val();
-        console.log(jam)
-        $('#clock').countdown(jam, function(event) {
-        var $this = $(this).html(event.strftime(''
-            + '<span>%d</span> Hari '
-            + '<span>%H</span> Jam '
-            + '<span>%M</span> Menit '
-            + '<span>%S</span> Detik'));
-        });
-            
-       
-      
-    });
-</script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var targetDate = new Date("{{$conf_buka->tgl_buka}}").getTime();
+
+    var countdown = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = targetDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("clock").innerHTML = '<span>' + days + '</span> Hari ' +
+                                                      '<span>' + hours + '</span> Jam ' +
+                                                      '<span>' + minutes + '</span> Menit ' +
+                                                      '<span>' + seconds + '</span> Detik ';
+
+        if (distance < 0) {
+            clearInterval(countdown);
+            document.getElementById("clock").innerHTML = "Waktu pengumuman telah berakhir";
+        }
+    }, 1000);
+});
+
+</script>
 @endsection
